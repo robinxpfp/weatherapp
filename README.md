@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Weather App
 
-## Getting Started
+## Description
 
-First, run the development server:
+Weather App is a simple web application that allows you to retrieve real-time weather information for any city. This application utilizes data from the OpenWeatherMap API and displays details such as the current temperature, weather description, wind speed, humidity, sunrise and sunset times, and geographical coordinates.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Screenshots
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Dark Mode](./public/darkmode.png)
+_Dark Mode_
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![Light Mode](./public/lightmode.png)
+_Light Mode_
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Technologies Used
 
-## Learn More
+- React
+- Next.js
+- Tailwind CSS
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Search for weather information for any city.
+- Fetches real-time data from the OpenWeatherMap API.
+- Displays temperature in degrees Celsius.
+- Provides additional information such as weather description, wind speed, and more.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Installation and Usage
 
-## Deploy on Vercel
+1. Clone the repository to your local machine:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   git clone https://github.com/your-username/weather-app.git
+   ```
