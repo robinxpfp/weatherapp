@@ -1,4 +1,4 @@
-import { Data } from "@/components/Data";
+import { Data } from "@/components/data";
 
 export default function Home() {
   return <Data />;
