@@ -5,7 +5,6 @@ import { Clock } from "@/components/clock";
 import { SunInfo } from "@/components/sun-info";
 import { WeatherInfo } from "@/components/weather-info";
 import { Nav } from "./nav";
-// import { TimeZones } from "./time-zones";
 
 interface WeatherData {
   main?: { temp: number; humidity: string };
@@ -34,7 +33,7 @@ export function Data() {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div className="min-h-screen bg-white text-black font-sans">
+    <div className="min-h-screen bg-gray-50 font-sans">
       <Nav city={city} setCity={setCity} />
       <main className="max-w-6xl mx-auto">
         <Clock is24Hour={is24Hour} setIs24Hour={setIs24Hour} />
@@ -42,12 +41,7 @@ export function Data() {
           sunrise={weatherData.sys?.sunrise || 0}
           sunset={weatherData.sys?.sunset || 0}
         />
-        <div className="border-t border-gray-100 pt-6 mx-6"></div>
         <WeatherInfo weatherData={weatherData} />
-        {/* <TimeZones
-          is24Hour={is24Hour}
-          currentCity={weatherData.name || "London"}
-        /> */}
       </main>
     </div>
   );

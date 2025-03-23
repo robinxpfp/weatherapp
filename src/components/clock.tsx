@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 type ClockProps = {
   is24Hour: boolean;
@@ -17,7 +16,7 @@ export function Clock({ is24Hour, setIs24Hour }: ClockProps) {
       const hours = is24Hour ? now.getHours() : now.getHours() % 12 || 12;
       const minutes = String(now.getMinutes()).padStart(2, "0");
       const seconds = String(now.getSeconds()).padStart(2, "0");
-      setTime(`${String(hours).padStart(2, "0")} : ${minutes} : ${seconds}`);
+      setTime(`${String(hours).padStart(2, "0")}:${minutes}:${seconds}`);
     };
 
     updateTime();
@@ -26,20 +25,28 @@ export function Clock({ is24Hour, setIs24Hour }: ClockProps) {
   }, [is24Hour]);
 
   return (
-    <div className="flex items-center justify-between p-6">
-      <span className="text-9xl leading-none font-bold tracking-tighter">
+    <div className="flex flex-col items-center mb-12">
+      <span className="text-7xl md:text-8xl font-bold tracking-tighter mb-8">
         {time}
       </span>
-      <Tabs
-        value={is24Hour ? "24h" : "12h"}
-        onValueChange={(value) => setIs24Hour(value === "24h")}
-        className="flex items-center"
-      >
-        <TabsList>
-          <TabsTrigger value="12h">12h</TabsTrigger>
-          <TabsTrigger value="24h">24h</TabsTrigger>
-        </TabsList>
-      </Tabs>
+      <div className="flex gap-2">
+        <button
+          onClick={() => setIs24Hour(false)}
+          className={`px-4 py-1 rounded-full text-sm ${
+            !is24Hour ? "bg-black text-white" : "bg-gray-200"
+          }`}
+        >
+          12h
+        </button>
+        <button
+          onClick={() => setIs24Hour(true)}
+          className={`px-4 py-1 rounded-full text-sm ${
+            is24Hour ? "bg-black text-white" : "bg-gray-200"
+          }`}
+        >
+          24h
+        </button>
+      </div>
     </div>
   );
 }
