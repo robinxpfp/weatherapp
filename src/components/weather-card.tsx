@@ -33,7 +33,7 @@ export const WeatherCard = ({
       <span className="text-2xl font-bold">{value}</span>
     </CardHeader>
     <CardContent>
-      <div className="text-gray-600 text-sm mb-2">{description}</div>
+      <div className=" text-sm mb-2">{description}</div>
       {progress && (
         <div className="mt-2">
           <Progress
@@ -42,8 +42,8 @@ export const WeatherCard = ({
           />
           {(progress.minLabel || progress.maxLabel) && (
             <div className="flex justify-between mt-1">
-              <span className="text-xs text-gray-500">{progress.minLabel}</span>
-              <span className="text-xs text-gray-500">{progress.maxLabel}</span>
+              <span className="text-xs ">{progress.minLabel}</span>
+              <span className="text-xs ">{progress.maxLabel}</span>
             </div>
           )}
         </div>
@@ -51,7 +51,7 @@ export const WeatherCard = ({
       {extraInfo && (
         <div className="mt-2 gap-2">
           <div className={`h-2 w-2 rounded-full ${extraInfo.dotColor}`} />
-          <span className="text-xs text-gray-500">{extraInfo.label}</span>
+          <span className="text-xs ">{extraInfo.label}</span>
         </div>
       )}
     </CardContent>

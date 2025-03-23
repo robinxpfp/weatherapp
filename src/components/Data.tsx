@@ -50,9 +50,7 @@ export function Data() {
       return (
         <div className="p-6 text-center">
           <p className="text-red-500 mb-4">{error.message}</p>
-          <p className="text-gray-600">
-            Try searching for another city using the search bar above.
-          </p>
+          <p>Try searching for another city using the search bar above.</p>
         </div>
       );
     }
@@ -67,7 +65,7 @@ export function Data() {
       }
       return (
         <div className="p-6 text-center">
-          <p className="text-gray-600">{message}</p>
+          <p>{message}</p>
         </div>
       );
     }

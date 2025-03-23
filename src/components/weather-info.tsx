@@ -83,7 +83,6 @@ export const WeatherInfo = ({ weatherData }: { weatherData: WeatherData }) => {
 
   return (
     <div className="mb-8 px-4 sm:px-8">
-      <h3 className="text-sm text-gray-500 mb-2">Current</h3>
       <div className="flex flex-col sm:flex-row items-start gap-4">
         <Card className="w-full sm:w-1/3">
           <CardHeader>
@@ -94,7 +93,7 @@ export const WeatherInfo = ({ weatherData }: { weatherData: WeatherData }) => {
           </CardHeader>
           <CardContent>
             <p className="text-5xl font-bold mb-2">{temp}°</p>
-            <p className="text-gray-600 capitalize">{weatherDesc}</p>
+            <p className=" capitalize">{weatherDesc}</p>
           </CardContent>
         </Card>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full sm:w-2/3">
@@ -128,11 +127,11 @@ export const WeatherInfo = ({ weatherData }: { weatherData: WeatherData }) => {
             description={
               <div className="grid grid-cols-2 gap-2 mb-2">
                 <div>
-                  <Label className="text-xs text-gray-500">Longitude</Label>
+                  <Label className="text-xs ">Longitude</Label>
                   <p className="font-bold">{weatherData.coord?.lon || "..."}</p>
                 </div>
                 <div>
-                  <Label className="text-xs text-gray-500">Latitude</Label>
+                  <Label className="text-xs ">Latitude</Label>
                   <p className="font-bold">{weatherData.coord?.lat || "..."}</p>
                 </div>
               </div>

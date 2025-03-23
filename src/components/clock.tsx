@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 type ClockProps = {
   is24Hour: boolean;
@@ -36,24 +37,23 @@ export function Clock({ is24Hour, setIs24Hour }: ClockProps) {
         </span>
         <span className="text-2xl sm:text-3xl font-bold">{period}</span>
       </div>
-      <div className="flex gap-2 mt-8">
-        <button
-          onClick={() => setIs24Hour(false)}
-          className={`px-4 py-1 rounded-full text-sm ${
-            !is24Hour ? "bg-black text-white" : "bg-gray-200"
-          }`}
-        >
-          12h
-        </button>
-        <button
-          onClick={() => setIs24Hour(true)}
-          className={`px-4 py-1 rounded-full text-sm ${
-            is24Hour ? "bg-black text-white" : "bg-gray-200"
-          }`}
-        >
-          24h
-        </button>
-      </div>
+
+      <Tabs
+        value={is24Hour ? "24h" : "12h"}
+        onValueChange={(value) => setIs24Hour(value === "24h")}
+        className="mt-8"
+      >
+        <TabsList className="grid w-full grid-cols-2 max-w-[200px]">
+          <TabsTrigger value="12h">12h</TabsTrigger>
+          <TabsTrigger value="24h">24h</TabsTrigger>
+        </TabsList>
+        <TabsContent value="12h">
+          <div className="hidden" />{" "}
+        </TabsContent>
+        <TabsContent value="24h">
+          <div className="hidden" />{" "}
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }
