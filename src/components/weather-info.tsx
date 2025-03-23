@@ -1,6 +1,6 @@
 "use client";
 
-import { Values } from "@/components/values";
+import { Values } from "@/components/Values";
 
 type WeatherData = {
   main?: { temp: number; humidity: string };
