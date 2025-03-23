@@ -12,7 +12,7 @@ export function SearchForm({ city, setCity }: SearchFormProps) {
       <div className="relative">
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2  w-4 h-4" />
         <Input
-          className="pl-10 rounded-3xl"
+          className="pl-10 rounded-3xl w-[200px]"
           type="text"
           placeholder="Search location by city"
           value={city}

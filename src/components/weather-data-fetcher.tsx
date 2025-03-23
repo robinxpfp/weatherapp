@@ -24,7 +24,7 @@ const fetcher = (url: string) =>
       if (data.cod !== 200) {
         throw new Error(
           data.message === "city not found"
-            ? `The city "${data.city}" was not found. Please try another city.`
+            ? `The city was not found. Please try another city.`
             : data.message ?? "Failed to fetch weather data"
         );
       }
