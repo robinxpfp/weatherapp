@@ -30,7 +30,7 @@ export function SunInfo({ sunrise, sunset }: SunInfoProps) {
   ];
 
   return (
-    <div className="text-center opacity-70">
+    <div className="text-center opacity-70 sm:mb-4 mb-12">
       {dayNames[today.getDay()]}, {monthNames[today.getMonth()]}{" "}
       {today.getDate()} {today.getFullYear()}
     </div>

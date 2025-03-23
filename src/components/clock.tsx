@@ -31,10 +31,10 @@ export function Clock({ is24Hour, setIs24Hour }: ClockProps) {
   return (
     <div className="flex flex-col items-center mb-6">
       <div className="flex items-baseline gap-2">
-        <span className="text-7xl md:text-8xl font-bold tracking-tighter">
+        <span className="text-7xl sm:text-8xl font-bold tracking-tighter">
           {time}
         </span>
-        <span className="text-2xl md:text-3xl font-bold">{period}</span>
+        <span className="text-2xl sm:text-3xl font-bold">{period}</span>
       </div>
       <div className="flex gap-2 mt-8">
         <button

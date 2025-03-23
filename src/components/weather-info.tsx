@@ -82,10 +82,10 @@ export const WeatherInfo = ({ weatherData }: { weatherData: WeatherData }) => {
       : "Good day for outdoor activities";
 
   return (
-    <div className="mb-8 px-4 md:px-8">
+    <div className="mb-8 px-4 sm:px-8">
       <h3 className="text-sm text-gray-500 mb-2">Current</h3>
-      <div className="flex flex-col md:flex-row items-start gap-4">
-        <Card className="w-full md:w-1/3">
+      <div className="flex flex-col sm:flex-row items-start gap-4">
+        <Card className="w-full sm:w-1/3">
           <CardHeader>
             <h2 className="text-3xl font-bold">
               {weatherData.name || "City"},{" "}
@@ -97,7 +97,7 @@ export const WeatherInfo = ({ weatherData }: { weatherData: WeatherData }) => {
             <p className="text-gray-600 capitalize">{weatherDesc}</p>
           </CardContent>
         </Card>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full md:w-2/3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full sm:w-2/3">
           <WeatherCard
             title="Wind Speed"
             value={`${windSpeed} m/s`}
