@@ -49,9 +49,9 @@ export function Data() {
   }, [city]);
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans">
+    <div>
       <Nav city={city} setCity={setCity} />
-      <main className="max-w-6xl mx-auto">
+      <main className=" mx-auto">
         {error ? (
           <div className="p-6 text-center">
             <p className="text-red-500 mb-4">{error}</p>

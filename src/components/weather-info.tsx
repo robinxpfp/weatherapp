@@ -1,5 +1,7 @@
 import { Wind, Droplets, MapPin, Sunrise, Sunset, Sun } from "lucide-react";
 import { WeatherCard } from "@/components/weather-card";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
 
 type WeatherData = {
   main?: { temp: number; humidity: number };
@@ -83,30 +85,42 @@ export const WeatherInfo = ({ weatherData }: { weatherData: WeatherData }) => {
     <div className="mb-8 px-4 md:px-8">
       <h3 className="text-sm text-gray-500 mb-2">Current</h3>
       <div className="flex flex-col md:flex-row items-start gap-4">
-        <div className="bg-white rounded-3xl shadow-sm p-6 w-full md:w-1/3">
-          <div className="flex flex-col">
-            <h2 className="text-3xl font-bold mb-1">
+        <Card className="w-full md:w-1/3">
+          <CardHeader>
+            <h2 className="text-3xl font-bold">
               {weatherData.name || "City"},{" "}
               {weatherData.sys?.country || "Country"}
             </h2>
-            <p className="text-5xl font-bold mb-4">{temp}°</p>
+          </CardHeader>
+          <CardContent>
+            <p className="text-5xl font-bold mb-2">{temp}°</p>
             <p className="text-gray-600 capitalize">{weatherDesc}</p>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full md:w-2/3">
           <WeatherCard
             title="Wind Speed"
             value={`${windSpeed} m/s`}
             description={`${windDesc} from ${windDirection.toLowerCase()}`}
             icon={Wind}
-            progress={Math.min((windSpeed / 20) * 100, 100)}
+            progress={{
+              value: Math.min((windSpeed / 20) * 100, 100),
+              minLabel: "Low",
+              maxLabel: "High",
+              color: "bg-blue-500",
+            }}
           />
           <WeatherCard
             title="Humidity"
             value={`${humidity}%`}
             description={humidityDesc}
             icon={Droplets}
-            progress={humidity}
+            progress={{
+              value: humidity,
+              minLabel: "Dry",
+              maxLabel: "Humid",
+              color: "bg-blue-500",
+            }}
           />
           <WeatherCard
             title="Coordinates"
@@ -114,11 +128,11 @@ export const WeatherInfo = ({ weatherData }: { weatherData: WeatherData }) => {
             description={
               <div className="grid grid-cols-2 gap-2 mb-2">
                 <div>
-                  <p className="text-xs text-gray-500">Longitude</p>
+                  <Label className="text-xs text-gray-500">Longitude</Label>
                   <p className="font-bold">{weatherData.coord?.lon || "..."}</p>
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500">Latitude</p>
+                  <Label className="text-xs text-gray-500">Latitude</Label>
                   <p className="font-bold">{weatherData.coord?.lat || "..."}</p>
                 </div>
               </div>
@@ -158,7 +172,12 @@ export const WeatherInfo = ({ weatherData }: { weatherData: WeatherData }) => {
             value={rating}
             description={ratingDesc}
             icon={Sun}
-            progress={(ratingNum / 10) * 100}
+            progress={{
+              value: (ratingNum / 10) * 100,
+              minLabel: "Poor",
+              maxLabel: "Excellent",
+              color: "bg-yellow-500",
+            }}
           />
         </div>
       </div>

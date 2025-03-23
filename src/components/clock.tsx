@@ -25,7 +25,7 @@ export function Clock({ is24Hour, setIs24Hour }: ClockProps) {
   }, [is24Hour]);
 
   return (
-    <div className="flex flex-col items-center mb-12">
+    <div className="flex flex-col items-center mb-6">
       <span className="text-7xl md:text-8xl font-bold tracking-tighter mb-8">
         {time}
       </span>
