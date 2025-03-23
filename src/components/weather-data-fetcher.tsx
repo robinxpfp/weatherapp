@@ -35,15 +35,17 @@ export function WeatherDataFetcher() {
   const [city, setCity] = useState<string>("London");
   const [is24Hour, setIs24Hour] = useState<boolean>(true);
 
+  // Use environment variables for the API URL and key
+  const API_BASE_URL = process.env.NEXT_PUBLIC_WEATHER_API_BASE_URL;
+  const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
+
   // Use SWR to get data from API
   const { data: weatherData, error } = useSWR<WeatherData, Error>(
-    city
-      ? `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=bd848f8597bb9b1938a469ca1800dedb`
-      : null,
+    city ? `${API_BASE_URL}?q=${city}&appid=${API_KEY}` : null,
     fetcher
   );
 
-  // function to render content
+  // Function to render content
   const renderContent = () => {
     // Verify if there is an error
     if (error !== undefined && error !== null) {
@@ -55,7 +57,7 @@ export function WeatherDataFetcher() {
       );
     }
 
-    // verify if data is undefined
+    // Verify if data is undefined
     if (weatherData === undefined) {
       let message: string;
       if (city !== "" && city !== undefined && city !== null) {
