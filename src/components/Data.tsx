@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { SearchForm } from "@/components/search-form";
 import { Clock } from "@/components/clock";
 import { SunInfo } from "@/components/sun-info";
 import { WeatherInfo } from "@/components/weather-info";
@@ -36,7 +35,6 @@ export function Data() {
 
   return (
     <div className="min-h-screen bg-white text-black font-sans">
-      {/* <SearchForm city={city} setCity={setCity} /> */}
       <Nav city={city} setCity={setCity} />
       <main className="max-w-6xl mx-auto">
         <Clock is24Hour={is24Hour} setIs24Hour={setIs24Hour} />

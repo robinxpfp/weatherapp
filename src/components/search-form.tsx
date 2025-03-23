@@ -1,6 +1,4 @@
 "use client";
-
-import { Clock3 } from "lucide-react";
 import { Search } from "lucide-react";
 
 type SearchFormProps = {

@@ -2,18 +2,18 @@
 
 import { useState, useEffect } from "react";
 
-interface TimeZone {
+type TimeZone = {
   city: string;
   country?: string;
   offset: number;
   time?: string;
   isDaytime?: boolean;
-}
+};
 
-interface TimeZonesProps {
+type TimeZonesProps = {
   is24Hour: boolean;
   currentCity: string;
-}
+};
 
 export function TimeZones({ is24Hour, currentCity }: TimeZonesProps) {
   const [timeZones, setTimeZones] = useState<TimeZone[]>([

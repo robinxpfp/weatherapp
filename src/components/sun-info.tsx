@@ -1,7 +1,7 @@
-interface SunInfoProps {
+type SunInfoProps = {
   sunrise: number;
   sunset: number;
-}
+};
 
 export function SunInfo({ sunrise, sunset }: SunInfoProps) {
   const sunriseDate = new Date(sunrise * 1000);

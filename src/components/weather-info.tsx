@@ -2,17 +2,17 @@
 
 import { Values } from "@/components/values";
 
-interface WeatherData {
+type WeatherData = {
   main?: { temp: number; humidity: string };
   wind?: { speed: string };
   sys?: { country: string; sunrise: number; sunset: number };
   coord?: { lon: string; lat: string };
   name?: string;
-}
+};
 
-interface WeatherInfoProps {
+type WeatherInfoProps = {
   weatherData: WeatherData;
-}
+};
 
 export function WeatherInfo({ weatherData }: WeatherInfoProps) {
   // Si weatherData.sys o sus propiedades son undefined, usamos 0 como valor por defecto
