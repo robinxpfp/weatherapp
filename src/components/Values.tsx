@@ -1,21 +1,13 @@
-import Image from "next/image";
-import React from "react";
+type ValuesProps = {
+  texto: string;
+  valor?: string;
+};
 
-export default function Values(props: any) {
+export function Values({ texto, valor }: ValuesProps) {
   return (
-    <div className="flex justify-between text-sm">
-      <div className="flex space-x-2">
-        <Image
-          className="w-5 h-5"
-          width={20}
-          height={20}
-          src={props.img}
-          alt={props.texto}
-          title={props.texto}
-        />
-        <p className="subpixel-antialiased font-medium">{props.texto}</p>
-      </div>
-      <p>{props.valor ? props.valor : "......"}</p>
+    <div className="flex justify-between items-center py-2 border-b border-gray-100">
+      <div className="text-sm font-medium">{texto}</div>
+      <div className="text-sm">{valor ?? "..."}</div>
     </div>
   );
 }
