@@ -8,7 +8,7 @@ type ClockProps = {
   setIs24Hour: (value: boolean) => void;
 };
 
-export function Clock({ is24Hour, setIs24Hour }: ClockProps) {
+export function WeatherClock({ is24Hour, setIs24Hour }: ClockProps) {
   const [time, setTime] = useState<string>("");
   const [period, setPeriod] = useState<string>("");
 

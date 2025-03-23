@@ -1,5 +1,5 @@
-import { Data } from "@/components/Data";
+import { WeatherDataFetcher } from "@/components/weather-data-fetcher";
 
 export default function Home() {
-  return <Data />;
+  return <WeatherDataFetcher />;
 }

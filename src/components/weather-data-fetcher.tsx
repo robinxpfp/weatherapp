@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import useSWR from "swr";
-import { Clock } from "@/components/clock";
+import { WeatherClock } from "@/components/weather-clock";
 import { SunInfo } from "@/components/sun-info";
 import { WeatherInfo } from "@/components/weather-info";
-import { Nav } from "@/components/nav";
+import { Header } from "@/components/header";
 
 type WeatherData = {
   main?: { temp: number; humidity: number };
@@ -31,7 +31,7 @@ const fetcher = (url: string) =>
       return data;
     });
 
-export function Data() {
+export function WeatherDataFetcher() {
   const [city, setCity] = useState<string>("London");
   const [is24Hour, setIs24Hour] = useState<boolean>(true);
 
@@ -73,11 +73,8 @@ export function Data() {
     // if data is defined render content
     return (
       <div>
-        <Clock is24Hour={is24Hour} setIs24Hour={setIs24Hour} />
-        <SunInfo
-          sunrise={weatherData.sys?.sunrise ?? 0}
-          sunset={weatherData.sys?.sunset ?? 0}
-        />
+        <WeatherClock is24Hour={is24Hour} setIs24Hour={setIs24Hour} />
+        <SunInfo />
         <WeatherInfo weatherData={weatherData} />
       </div>
     );
@@ -85,7 +82,7 @@ export function Data() {
 
   return (
     <div>
-      <Nav city={city} setCity={setCity} />
+      <Header city={city} setCity={setCity} />
       <main className="mx-auto">{renderContent()}</main>
     </div>
   );

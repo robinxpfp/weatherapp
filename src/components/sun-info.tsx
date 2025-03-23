@@ -1,9 +1,4 @@
-type SunInfoProps = {
-  sunrise: number;
-  sunset: number;
-};
-
-export function SunInfo({ sunrise, sunset }: SunInfoProps) {
+export function SunInfo() {
   const today = new Date();
   const dayNames = [
     "Sunday",
